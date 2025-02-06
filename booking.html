@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="container background">
+
+    
+    <nav class="navbar navbar-expand-lg  navbar-light">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="img/hyundai-i20.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Bootstrap
+            </a>
+    
+            <!-- Navbar toggler for mobile view -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar Items -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Airport Transfer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tours & Activities</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Button on the right -->
+            <div class="d-flex">
+                <button class="btn btn-success">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-4">
+        <h1 class="fw-bold">Select Your Car  <em class="fw-light">- Search, compare & choose the best vehicle for you</em></h1>
+    </div>
+
+ 
+    <div class="d-flex flex-wrap gap-3 mb-3"></div>
+        <button class="btn btn-success position-relative me-2 badge rounded-pill px-4 py-2" id="allButton">
+            All
+            <!-- <span class="badge rounded-pill"></span>
+                <i class="fas fa-times"></i>
+            </span> -->
+        </button>
+        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2">
+            Economy
+            <!-- <span class="badge rounded-pill bg-secondary"></span>
+                <i class="fas fa-times"></i>
+            </span> -->
+        </button>
+        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2">
+            Sedan
+            <!-- <span class="badge rounded-pill bg-secondary"></span>
+                <i class="fas fa-times"></i>
+            </span> -->
+        </button>
+        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2">
+            Family Car
+            <!-- <span class="badge rounded-pill bg-secondary"></span>
+                <i class="fas fa-times"></i>
+            </span> -->
+        </button>
+        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2">
+            SUV
+            <!-- <span class="badge rounded-pill bg-secondary"></span>
+                <i class="fas fa-times"></i>
+            </span> -->
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll(".btn-secondary, .btn-success");
+            buttons.forEach(button => {
+                button.addEventListener("click", function() {
+                    if (this.classList.contains("btn-success")) {
+                        this.classList.remove("btn-success", "shadow");
+                        this.classList.add("btn-secondary");
+                    } else {
+                        buttons.forEach(btn => btn.classList.remove("btn-success", "shadow"));
+                        buttons.forEach(btn => btn.classList.add("btn-secondary"));
+                        this.classList.remove("btn-secondary");
+                        this.classList.add("btn-success", "shadow");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div class="row mt-3">
+
+        
+        <div class="col-md-3 col-sm-12 mt-3">
+            <div class="card bgf shadow brds">
+                <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
+                    <span class="badge bedz text-bg-warning tipads ">Popular</span>
+                </h3>
+        
+                <!-- Image Container -->
+                <div class="image-container2 position-relative" style="height: 200px;">
+                    <!-- Static Image -->
+                    <img src="img/hyundai-i20.webp" loading="lazy" class="card-img-top p-4 main-img2" alt="Standard Taxi Vehicle" title="Standard Car">
+        
+                    <!-- Bootstrap Carousel (Initially Hidden) -->
+                    <div id="car-carousel2" class="carousel slide position-absolute top-0 start-0 w-100 h-100 d-none" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
+                                <img src="img/Flexible Payment Options.webp" class="d-block w-100 p-4 h-100" alt="Flexible Payment Options">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/Guaranteed Car Availability.webp" class="d-block w-100 p-4 h-100" alt="Guaranteed Car Availability">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/toyota-yaris-sedan.webp" class="d-block w-100 p-4 h-100" alt="Toyota Yaris Sedan">
+                            </div>
+                        </div>
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="2"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center pb-2">
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-snowflake"></i><br>
+                                <span class="">AC</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-cogs"></i>
+                                <span class="">Automatic</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-users"></i><br>
+                                <span class="">4 Seats</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+     
+        
+
+        <div class="col-md-3 col-sm-12 mt-3">
+            <div class="card bgf shadow brds">
+                <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
+                    <span class="badge bedz text-bg-warning tipads ">Popular</span>
+                </h3>
+        
+                <!-- Image Container -->
+                <div class="image-container2 position-relative" style="height: 200px;">
+                    <!-- Static Image -->
+                    <img src="img/hyundai-i20.webp" loading="lazy" class="card-img-top p-4 main-img2" alt="Standard Taxi Vehicle" title="Standard Car">
+        
+                    <!-- Bootstrap Carousel (Initially Hidden) -->
+                    <div id="car-carousel2" class="carousel slide position-absolute top-0 start-0 w-100 h-100 d-none" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
+                                <img src="img/Flexible Payment Options.webp" class="d-block w-100 p-4 h-100" alt="Flexible Payment Options">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/Guaranteed Car Availability.webp" class="d-block w-100 p-4 h-100" alt="Guaranteed Car Availability">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/toyota-yaris-sedan.webp" class="d-block w-100 p-4 h-100" alt="Toyota Yaris Sedan">
+                            </div>
+                        </div>
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="2"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center pb-2">
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-snowflake"></i><br>
+                                <span class="">AC</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-cogs"></i>
+                                <span class="">Automatic</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-users"></i><br>
+                                <span class="">4 Seats</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <div class="col-md-3 col-sm-12 mt-3">
+            <div class="card bgf shadow brds">
+                <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
+                    <span class="badge bedz text-bg-warning tipads ">Popular</span>
+                </h3>
+        
+                <!-- Image Container -->
+                <div class="image-container2 position-relative" style="height: 200px;">
+                    <!-- Static Image -->
+                    <img src="img/hyundai-i20.webp" loading="lazy" class="card-img-top p-4 main-img2" alt="Standard Taxi Vehicle" title="Standard Car">
+        
+                    <!-- Bootstrap Carousel (Initially Hidden) -->
+                    <div id="car-carousel2" class="carousel slide position-absolute top-0 start-0 w-100 h-100 d-none" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
+                                <img src="img/Flexible Payment Options.webp" class="d-block w-100 p-4 h-100" alt="Flexible Payment Options">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/Guaranteed Car Availability.webp" class="d-block w-100 p-4 h-100" alt="Guaranteed Car Availability">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/toyota-yaris-sedan.webp" class="d-block w-100 p-4 h-100" alt="Toyota Yaris Sedan">
+                            </div>
+                        </div>
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="2"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center pb-2">
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-snowflake"></i><br>
+                                <span class="">AC</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-cogs"></i>
+                                <span class="">Automatic</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-users"></i><br>
+                                <span class="">4 Seats</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-12 mt-3">
+            <div class="card bgf shadow brds">
+                <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
+                    <span class="badge bedz text-bg-warning tipads ">Popular</span>
+                </h3>
+                <!-- Image Container -->
+                <div class="image-container2 position-relative" style="height: 200px;">
+                    <!-- Static Image -->
+                    <img src="img/hyundai-i20.webp" loading="lazy" class="card-img-top p-4 main-img2" alt="Standard Taxi Vehicle" title="Standard Car">
+                    <!-- Bootstrap Carousel (Initially Hidden) -->
+                    <div class="carousel slide position-absolute top-0 start-0 w-100 h-100 d-none" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
+                                <img src="img/Flexible Payment Options.webp" class="d-block w-100 p-4 h-100" alt="Flexible Payment Options">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/Guaranteed Car Availability.webp" class="d-block w-100 p-4 h-100" alt="Guaranteed Car Availability">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/toyota-yaris-sedan.webp" class="d-block w-100 p-4 h-100" alt="Toyota Yaris Sedan">
+                            </div>
+                        </div>
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="2"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center pb-2">
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-snowflake"></i><br>
+                                <span class="">AC</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-cogs"></i>
+                                <span class="">Automatic</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-users"></i><br>
+                                <span class="">4 Seats</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-12 mt-3">
+            <div class="card bgf shadow brds">
+                <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
+                    <span class="badge bedz text-bg-warning tipads ">Popular</span>
+                </h3>
+                <!-- Image Container -->
+                <div class="image-container2 position-relative" style="height: 200px;">
+                    <!-- Static Image -->
+                    <img src="img/hyundai-i20.webp" loading="lazy" class="card-img-top p-4 main-img2" alt="Standard Taxi Vehicle" title="Standard Car">
+                    <!-- Bootstrap Carousel (Initially Hidden) -->
+                    <div class="carousel slide position-absolute top-0 start-0 w-100 h-100 d-none" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
+                                <img src="img/Flexible Payment Options.webp" class="d-block w-100 p-4 h-100" alt="Flexible Payment Options">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/Guaranteed Car Availability.webp" class="d-block w-100 p-4 h-100" alt="Guaranteed Car Availability">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/toyota-yaris-sedan.webp" class="d-block w-100 p-4 h-100" alt="Toyota Yaris Sedan">
+                            </div>
+                        </div>
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="2"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center pb-2">
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-snowflake"></i><br>
+                                <span class="">AC</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-cogs"></i>
+                                <span class="">Automatic</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-users"></i><br>
+                                <span class="">4 Seats</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-12 mt-3">
+            <div class="card bgf shadow brds">
+                
+                <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue" id="car10">Standard Car
+                    
+                </h3>
+                <!-- Image Container -->
+                <div class="image-container2 position-relative" style="height: 200px;">
+                    <!-- Static Image -->
+                    <img src="img/hyundai-i20.webp" loading="lazy" class="card-img-top p-4 main-img2" alt="Standard Taxi Vehicle" title="Standard Car">
+                    <!-- Bootstrap Carousel (Initially Hidden) -->
+                    <div class="carousel slide position-absolute top-0 start-0 w-100 h-100 d-none" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
+                                <img src="img/Flexible Payment Options.webp" class="d-block w-100 p-4 h-100" alt="Flexible Payment Options">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/Guaranteed Car Availability.webp" class="d-block w-100 p-4 h-100" alt="Guaranteed Car Availability">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/toyota-yaris-sedan.webp" class="d-block w-100 p-4 h-100" alt="Toyota Yaris Sedan">
+                            </div>
+                        </div>
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#car-carousel2" data-bs-slide-to="2"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center pb-2">
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-snowflake"></i><br>
+                                <span class="">AC</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-cogs"></i>
+                                <span class="">Automatic</span>
+                            </div>
+                            <div class="col pb-3">
+                                <i class="fa-solid fa-users"></i><br>
+                                <span class="">4 Seats</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary" onclick="scrollToForm('sedan', 'Hyundai')" title="Book Standard Taxi Transfer">Book now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <h2 class="text-center">Booking Confirmation</h2>
+        <div class="card p-4">
+            <h4>Booking Details</h4>
+            <p><strong>Start Location:</strong> <span id="startLocation"></span></p>
+            <p><strong>Return Location:</strong> <span id="returnLocation"></span></p>
+            <p><strong>Start Date:</strong> <span id="startDate"></span></p>
+            <p><strong>Return Date:</strong> <span id="returnDate"></span></p>
+            <p><strong>Car Type:</strong> <span id="carType"></span></p>
+            <p><strong>Baby Seat:</strong> <span id="babySeat"></span></p>
+            <p><strong>Car Make:</strong> <span id="carMake"></span></p>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('startLocation').textContent = urlParams.get('startLocation');
+            document.getElementById('returnLocation').textContent = urlParams.get('returnLocation');
+            document.getElementById('startDate').textContent = urlParams.get('startDate');
+            document.getElementById('returnDate').textContent = urlParams.get('returnDate');
+            document.getElementById('carType').textContent = urlParams.get('carType');
+            document.getElementById('carMake').textContent = urlParams.get('hiddenField');
+
+            document.getElementById('babySeat').textContent = urlParams.get('babySeat') ? 'Yes' : 'No';
+        });
+    </script>
+</body>
+</html>

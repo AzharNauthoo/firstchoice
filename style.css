@@ -1,0 +1,51 @@
+.background{
+    background: rgb(248,255,238);
+    background: linear-gradient(90deg, rgba(248,255,238,1) 0%, rgba(253,255,255,0.22470238095238093) 100%);
+}
+
+.text-md-light{
+    color: rgb(92, 92, 92);
+}
+
+.small {
+    font-size: 80%;
+}
+
+.rating-stars i {
+    color: gold;
+}
+
+.leader{
+    font-size: larger !important;
+    font-weight: 500;
+}
+
+.text-hero-font-size{
+    font-size: 3rem;
+}
+
+.bg-gradient{
+    background: url('img/gradient-background.png') !important;
+    background-size: cover !important;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 123, 255, 0.8) 50%, rgba(0, 123, 255, 1) 100%);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 123, 255, 0.6) 50%, rgba(0, 123, 255, 1) 100%);
+    transition: background 0.5s ease-in-out;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+}
