@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Airport Transfer</a>
@@ -55,43 +55,57 @@
         </div>
     </nav>
 
-    <div class="container mt-5 mb-4">
+    <div class="container mt-5 mb-4" id="mainTitle2">
         <h1 class="fw-bold">Select Your Car  <em class="fw-light">- Search, compare & choose the best vehicle for you</em></h1>
     </div>
 
  
-    <div class="d-flex flex-wrap gap-3 mb-3"></div>
-        <button class="btn btn-success position-relative me-2 badge rounded-pill px-4 py-2" id="allButton">
+    <div class="d-flex flex-wrap gap-1 mb-3" id="carTypeButtons">
+        <button class="btn btn-success position-relative me-2 badge rounded-pill px-4 py-2" id="allButton" onclick="showAllCar()">
             All
             <!-- <span class="badge rounded-pill"></span>
                 <i class="fas fa-times"></i>
             </span> -->
         </button>
-        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2">
+        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2" onclick="showEconomy()">
             Economy
             <!-- <span class="badge rounded-pill bg-secondary"></span>
                 <i class="fas fa-times"></i>
             </span> -->
         </button>
-        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2">
+        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2" onclick="showSedan()">
             Sedan
             <!-- <span class="badge rounded-pill bg-secondary"></span>
                 <i class="fas fa-times"></i>
             </span> -->
         </button>
-        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2">
+        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2" onclick="showFamily()">
             Family Car
             <!-- <span class="badge rounded-pill bg-secondary"></span>
                 <i class="fas fa-times"></i>
             </span> -->
         </button>
-        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2">
+        <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2" onclick="showSUV()">
             SUV
             <!-- <span class="badge rounded-pill bg-secondary"></span>
                 <i class="fas fa-times"></i>
             </span> -->
         </button>
     </div>
+
+    
+ 
+
+    <div class="d-none mt-3 d-flex justify-content-between align-items-center" id="changeCarButton">
+        <div>
+            <span class="fw-bold h5">Car Selected </span>
+            <i class="fas fa-check-circle text-success"></i>
+        </div>
+        <button class="btn btn-info position-relative me-2 badge rounded-pill px-4 py-2" onclick="showAllCar()">
+            Choose another car
+        </button>
+    </div>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -115,7 +129,7 @@
     <div class="row mt-3">
 
         
-        <div class="col-md-3 col-sm-12 mt-3">
+        <div class="col-md-3 col-sm-12 mt-3 sedan " id="car1">
             <div class="card bgf shadow brds">
                 <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
                     <span class="badge bedz text-bg-warning tipads ">Popular</span>
@@ -166,7 +180,7 @@
                     </div>
                     <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" onclick="showOnlySelectedCar('car1', 'hyuandiv59')" title="Book Standard Taxi Transfer">Book now</button>
                     </div>
                 </div>
             </div>
@@ -175,7 +189,7 @@
      
         
 
-        <div class="col-md-3 col-sm-12 mt-3">
+        <div class="col-md-3 col-sm-12 mt-3 economy" id="car2">
             <div class="card bgf shadow brds">
                 <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
                     <span class="badge bedz text-bg-warning tipads ">Popular</span>
@@ -226,7 +240,7 @@
                     </div>
                     <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" onclick="showOnlySelectedCar('car2', 'toyotaaxio')"  title="Book Standard Taxi Transfer">Book now</button>
                     </div>
                 </div>
             </div>
@@ -234,7 +248,7 @@
 
        
 
-        <div class="col-md-3 col-sm-12 mt-3">
+        <div class="col-md-3 col-sm-12 mt-3 sedan" id="car3">
             <div class="card bgf shadow brds">
                 <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
                     <span class="badge bedz text-bg-warning tipads ">Popular</span>
@@ -285,13 +299,13 @@
                     </div>
                     <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" onclick="showOnlySelectedCar('car3')" title="Book Standard Taxi Transfer">Book now</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3 col-sm-12 mt-3">
+        <div class="col-md-3 col-sm-12 mt-3 suv" id="car4">
             <div class="card bgf shadow brds">
                 <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
                     <span class="badge bedz text-bg-warning tipads ">Popular</span>
@@ -340,13 +354,13 @@
                     </div>
                     <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" onclick="showOnlySelectedCar('car4')" title="Book Standard Taxi Transfer">Book now</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3 col-sm-12 mt-3">
+        <div class="col-md-3 col-sm-12 mt-3 family-car" id="car5">
             <div class="card bgf shadow brds">
                 <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue">Standard Car
                     <span class="badge bedz text-bg-warning tipads ">Popular</span>
@@ -395,16 +409,16 @@
                     </div>
                     <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" data-bs-toggle="modal" data-bs-target="#reg-modal" title="Book Standard Taxi Transfer">Book now</button>
+                        <button type="button" class="btn mx-auto btn-primary padz btnstre hoverable widr m-2 shadow" onclick="showOnlySelectedCar('car5')" title="Book Standard Taxi Transfer">Book now</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3 col-sm-12 mt-3">
+        <div class="col-md-3 col-sm-12 mt-3 sedan" id="Perodua Bezza">
             <div class="card bgf shadow brds">
                 
-                <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue" id="car10">Standard Car
+                <h3 class="pb-2 fs-5 pt-3 card-title text-center text-blue" id="car10">Perodua Bezza
                     
                 </h3>
                 <!-- Image Container -->
@@ -451,15 +465,154 @@
                     </div>
                     <p class="text-success fs-4 mb-2 text-center">€35<span class="h6 text-secondary">/ day</span></p>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary" onclick="scrollToForm('sedan', 'Hyundai')" title="Book Standard Taxi Transfer">Book now</button>
+                        <button type="button" class="btn btn-primary" onclick="showOnlySelectedCar('Perodua Bezza', 'Perodua Bezza')" title="Book Standard Taxi Transfer">Book now</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-md-9 mt-3 d-none" id="infoForm">
+            <!-- <form class="p-4  p-md-5 border rounded-3 border-primary shadow bg-white">
+            <h2 class="text-center ">Booking Form</h2>
+
+                <div class="form-floating mb-3 ">
+                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" required>
+                    <label for="fullName">Full Name <span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <label for="email">Email <span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp" required>
+                    <label for="whatsapp">WhatsApp <span class="text-danger">*</span></label>
+                </div>
+
+                <div class="row">
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="date" class="form-control" id="startD" name="startD"  placeholder="Start Date" required>
+                        <label for="startD" class="paddingLabel">Start Date <span class="text-danger">*</span></label>
+                        <datalist id="locationList"></datalist>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="date" class="form-control" id="returD" name="returD"  placeholder="Return Date" required>
+                        <label for="returD" class="paddingLabel">Return Date <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="text" class="form-control" id="startL" name="startL" list="locationList" placeholder="Start Location" required>
+                        <label for="startL" class="paddingLabel">Start Location <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="text" class="form-control" id="returnL" name="returnL" list="locationList" placeholder="Return Location" required>
+                        <label for="returnL" class="paddingLabel">Return Location <span class="text-danger">*</span></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="text" class="form-control" id="flightNumber" name="flightNumber" placeholder="Flight Number" required>
+                        <label for="flightNumber" class="paddingLabel">Flight Number <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="number" class="form-control " id="numberOfPassengers" name="numberOfPassengers" placeholder="Number of Passengers" required>
+                        <label for="numberOfPassengers" class="paddingLabel">Number of Passengers <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="number" class="form-control" id="bigLuggage" name="bigLuggage" placeholder="Big Luggage" required>
+                        <label for="bigLuggage" class="paddingLabel">Big Luggage <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="number" class="form-control" id="smallLuggage" name="smallLuggage" placeholder="Small Luggage" required>
+                        <label for="smallLuggage" class="paddingLabel">Small Luggage <span class="text-danger">*</span></label>
+                    </div>
+                </div>
+               
+       
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="additionalInfo" name="additionalInfo" placeholder="Additional Info" style="height: 100px"></textarea>
+                    <label for="additionalInfo">Additional Info</label>
+                </div>
+                <input type="hidden" id="carBrand" name="carBrand" value="">
+                <input type="hidden" id="baby" name="babyseat" value="">
+
+
+                <button class="w-100 btn btn-lg btn-primary" type="button" onclick="logFormValues()">Submit</button>
+            </form> -->
+
+            <form id="infoForm" class="p-4 p-md-5 border rounded-3 border-primary shadow bg-white">
+                <h2 class="text-center">Booking Form</h2>
+            
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" required>
+                    <label for="fullName">Full Name <span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <label for="email">Email <span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp" required>
+                    <label for="whatsapp">WhatsApp <span class="text-danger">*</span></label>
+                </div>
+            
+                <div class="row">
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="date" class="form-control" id="startD" name="startD" placeholder="Start Date" required>
+                        <label for="startD" class="paddingLabel">Start Date <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="date" class="form-control" id="returD" name="returD" placeholder="Return Date" required>
+                        <label for="returD" class="paddingLabel">Return Date <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="text" class="form-control" id="startL" name="startL" placeholder="Start Location" required>
+                        <label for="startL" class="paddingLabel">Start Location <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="text" class="form-control" id="returnL" name="returnL" placeholder="Return Location" required>
+                        <label for="returnL" class="paddingLabel">Return Location <span class="text-danger">*</span></label>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="text" class="form-control" id="flightNumber" name="flightNumber" placeholder="Flight Number" required>
+                        <label for="flightNumber" class="paddingLabel">Flight Number <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="number" class="form-control" id="numberOfPassengers" name="numberOfPassengers" placeholder="Number of Passengers" required>
+                        <label for="numberOfPassengers" class="paddingLabel">Number of Passengers <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="number" class="form-control" id="bigLuggage" name="bigLuggage" placeholder="Big Luggage" required>
+                        <label for="bigLuggage" class="paddingLabel">Big Luggage <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating mb-3 col-md-6 col-sm-12">
+                        <input type="number" class="form-control" id="smallLuggage" name="smallLuggage" placeholder="Small Luggage" required>
+                        <label for="smallLuggage" class="paddingLabel">Small Luggage <span class="text-danger">*</span></label>
+                    </div>
+                </div>
+            
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="additionalInfo" name="additionalInfo" placeholder="Additional Info" style="height: 100px"></textarea>
+                    <label for="additionalInfo">Additional Info</label>
+                </div>
+            
+                <input type="hidden" id="carBrand" name="carBrand" value="">
+                <input type="hidden" id="baby" name="babyseat" value="">
+            
+                <p id="error-message" class="text-danger text-center d-none">Please fill out all required fields.</p>
+            
+                <button id="submitBtn" class="w-100 btn btn-lg btn-primary" type="button" onclick="validateAndSubmit()">
+                    <span id="buttonText">Submit</span>
+                    <span id="loadingSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </form>
+            
+        </div>
     </div>
 
 
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h2 class="text-center">Booking Confirmation</h2>
         <div class="card p-4">
             <h4>Booking Details</h4>
@@ -472,20 +625,42 @@
             <p><strong>Car Make:</strong> <span id="carMake"></span></p>
 
         </div>
-    </div>
+    </div> -->
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            document.getElementById('startLocation').textContent = urlParams.get('startLocation');
-            document.getElementById('returnLocation').textContent = urlParams.get('returnLocation');
-            document.getElementById('startDate').textContent = urlParams.get('startDate');
-            document.getElementById('returnDate').textContent = urlParams.get('returnDate');
-            document.getElementById('carType').textContent = urlParams.get('carType');
-            document.getElementById('carMake').textContent = urlParams.get('hiddenField');
 
-            document.getElementById('babySeat').textContent = urlParams.get('babySeat') ? 'Yes' : 'No';
-        });
-    </script>
+
+
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-body-secondary">&copy; 2024 Company, Inc</p>
+  
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      </a>
+  
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Terms & Conditions</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy</a></li>
+   
+      </ul>
+    </footer>
+  </div>
+
+  <script src="carousel.js" ></script>
+
+  <script src="app.js" ></script>
+  <script src="booking.js" ></script>
+  <script src="location.js" ></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "2taz7dnL1t1K4apeh",
+      });
+   })();
+</script>
+<script src="email.js" ></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 .background{
     background: rgb(248,255,238);
     background: linear-gradient(90deg, rgba(248,255,238,1) 0%, rgba(253,255,255,0.22470238095238093) 100%);
+
 }
 
 .text-md-light{
@@ -15,6 +16,7 @@
     color: gold;
 }
 
+
 .leader{
     font-size: larger !important;
     font-weight: 500;
@@ -28,6 +30,8 @@
     background: url('img/gradient-background.png') !important;
     background-size: cover !important;
 }
+
+
 
 .btn-primary {
     background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 123, 255, 0.8) 50%, rgba(0, 123, 255, 1) 100%);
@@ -46,6 +50,132 @@
 
 body {
     box-sizing: border-box;
-    overflow-x: hidden;
-
+    overflow-x: hidden !important;
+    font-family: 'Exo 2' , sans-serif; 
+    /* Adding a cooler font for car rental */
 }
+.text-orange{
+    color: rgb(223, 137, 33)
+}
+.paddingLabel{
+    padding-left: 1.5rem !important;
+}
+
+.bg-white{
+    background-color: white;
+}
+
+
+
+
+.img-hover {
+    transition: transform 0.4s ease;
+  }
+  
+  .img-hover:hover {
+    transform: scale(0.9);
+  }
+
+  .zoomed-in {
+    transform: scale(1.2);
+    z-index: -1000 !important;
+  }
+  .protruding-box {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    background-color: #6d67ef;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: -1000 !important;
+}
+
+.protruding-dots {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #6d67ef 20%, transparent 20%) 0 0,
+                            radial-gradient(circle, #6d67ef 20%, transparent 20%) 12.5px 12.5px;
+    background-size: 25px 25px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: -1000 !important;
+}
+
+.cardtour {
+    max-width: 20em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .cardtour:is(:hover, :focus-within) {
+    transform: translateY(-0.2em);
+    box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.3);
+  }
+  
+  .cardtour:focus-within {
+    outline: medium solid;
+  }
+  
+
+  .rounded{
+    border-radius: 25px !important;
+    border: none !important;
+  }
+
+  .text-bg-orange{
+    background-color:rgb(223, 137, 33) ;
+  }
+
+  .tourCardText{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent); 
+    border-radius: 16px;
+  }
+
+  .customCard:hover .tourCardText{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.94), transparent); 
+  }
+
+  .customCard{
+    text-decoration: none; 
+    color: inherit; 
+    height:400px;
+  }
+
+  .customCard:hover .arrow {
+    opacity: 1;
+    }
+
+  .arrow {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    }
+
+    .card1 {
+      background-image: url("img/68.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+
+    }
+
+  @media screen and (max-width: 768px) {
+    .text-hero-font-size{
+        font-size: 2rem;
+    }
+  
+    
+  }
