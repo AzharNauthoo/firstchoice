@@ -1,6 +1,8 @@
 .background{
     background: rgb(248,255,238);
-    background: linear-gradient(90deg, rgba(248,255,238,1) 0%, rgba(253,255,255,0.22470238095238093) 100%);
+    background: linear-gradient(90deg, rgb(252, 254, 250) 0%, rgba(253,255,255,0.22470238095238093) 100%);
+    /* background: linear-gradient(90deg, rgb(198, 217, 251) 0%, rgba(253,255,255,0.22470238095238093) 100%); */
+
 
 }
 
@@ -51,7 +53,7 @@
 body {
     box-sizing: border-box;
     overflow-x: hidden !important;
-    font-family: 'Exo 2' , sans-serif; 
+    font-family: 'Exo 2' , sans-serif !important; 
     /* Adding a cooler font for car rental */
 }
 .text-orange{
@@ -64,9 +66,44 @@ body {
 .bg-white{
     background-color: white;
 }
+.greenRound{
+    border-radius:5px !important;
+    border: none !important;
+    /* background-color: rgb(0, 123, 255) !important; */
+    color: white !important;
+  }
+
+  .custom-border {
+
+    display: flex;
+    align-items: center;
+    border-left: 1px solid  !important;
+    height: 18px !important;
+
+  }
+
+  .cus{
+    display: flex;
+    align-items: center;
+    border-left: 1px solid transparent !important;
+  height: 18px !important;
+}
+
+.br-0{
+  border-radius: 0 !important;
+}
 
 
+.highlight{
+  border: 2px solid blue;
+}
 
+.carousel-control-next, .carousel-control-prev {
+  all: unset !important;
+  background-color: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+}
 
 .img-hover {
     transition: transform 0.4s ease;

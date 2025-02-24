@@ -339,3 +339,13 @@ function validateAndSubmit() {
 }
 
 
+function selectStandardCarAndScroll(carType) {
+    const vehicleTypeElement = document.getElementById('vehicleType');
+    vehicleTypeElement.value = carType;
+    document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });
+    vehicleTypeElement.classList.add('highlight');
+    setTimeout(() => {
+        vehicleTypeElement.classList.remove('highlight');
+    }, 2000);
+}
+

@@ -14,6 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
 </head>
 <body class="container background">
 
@@ -21,9 +26,9 @@
     <nav class="navbar navbar-expand-lg  navbar-light">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand" href="#">
-                <img src="img/hyundai-i20.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                Bootstrap
+            <a class="navbar-brand" href="index.html">
+                <img src="img/car-rental-logo.png" alt="Logo" width="140" class="d-inline-block align-text-top">
+         
             </a>
     
             <!-- Navbar toggler for mobile view -->
@@ -35,61 +40,48 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Airport Transfer</a>
+                        <a class="nav-link" href="airport-transfer.html">Airport Transfer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tours & Activities</a>
+                        <a class="nav-link " href="tours.html">Tours & Activities</a>
                     </li>
                 </ul>
             </div>
     
             <!-- Button on the right -->
             <div class="d-flex">
-                <button class="btn btn-success">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </button>
+                
+                <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=23052782696&amp;text=Book%20your%20next%20car%20rental%20in%20Mauritius%20with%20us" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i> Whatsapp
+                </a>
+                
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5 mb-4" id="mainTitle2">
+    <div class="container mt-5 mb-3" id="mainTitle2">
         <h1 class="fw-bold">Select Your Car  <em class="fw-light">- Search, compare & choose the best vehicle for you</em></h1>
     </div>
 
- 
-    <div class="d-flex flex-wrap gap-1 mb-3" id="carTypeButtons">
+    <div class="container d-flex flex-wrap gap-1 mb-3" id="carTypeButtons">
+   
         <button class="btn btn-success position-relative me-2 badge rounded-pill px-4 py-2" id="allButton" onclick="showAllCar()">
             All
-            <!-- <span class="badge rounded-pill"></span>
-                <i class="fas fa-times"></i>
-            </span> -->
         </button>
         <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2" onclick="showEconomy()">
             Economy
-            <!-- <span class="badge rounded-pill bg-secondary"></span>
-                <i class="fas fa-times"></i>
-            </span> -->
         </button>
         <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2" onclick="showSedan()">
             Sedan
-            <!-- <span class="badge rounded-pill bg-secondary"></span>
-                <i class="fas fa-times"></i>
-            </span> -->
         </button>
         <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2" onclick="showFamily()">
             Family Car
-            <!-- <span class="badge rounded-pill bg-secondary"></span>
-                <i class="fas fa-times"></i>
-            </span> -->
         </button>
         <button class="btn btn-secondary position-relative me-2 badge rounded-pill px-4 py-2" onclick="showSUV()">
             SUV
-            <!-- <span class="badge rounded-pill bg-secondary"></span>
-                <i class="fas fa-times"></i>
-            </span> -->
         </button>
     </div>
 
@@ -472,72 +464,6 @@
         </div>
 
         <div class="col-md-9 mt-3 d-none" id="infoForm">
-            <!-- <form class="p-4  p-md-5 border rounded-3 border-primary shadow bg-white">
-            <h2 class="text-center ">Booking Form</h2>
-
-                <div class="form-floating mb-3 ">
-                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" required>
-                    <label for="fullName">Full Name <span class="text-danger">*</span></label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-                    <label for="email">Email <span class="text-danger">*</span></label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp" required>
-                    <label for="whatsapp">WhatsApp <span class="text-danger">*</span></label>
-                </div>
-
-                <div class="row">
-                    <div class="form-floating mb-3 col-md-6 col-sm-12">
-                        <input type="date" class="form-control" id="startD" name="startD"  placeholder="Start Date" required>
-                        <label for="startD" class="paddingLabel">Start Date <span class="text-danger">*</span></label>
-                        <datalist id="locationList"></datalist>
-                    </div>
-                    <div class="form-floating mb-3 col-md-6 col-sm-12">
-                        <input type="date" class="form-control" id="returD" name="returD"  placeholder="Return Date" required>
-                        <label for="returD" class="paddingLabel">Return Date <span class="text-danger">*</span></label>
-                    </div>
-                    <div class="form-floating mb-3 col-md-6 col-sm-12">
-                        <input type="text" class="form-control" id="startL" name="startL" list="locationList" placeholder="Start Location" required>
-                        <label for="startL" class="paddingLabel">Start Location <span class="text-danger">*</span></label>
-                    </div>
-                    <div class="form-floating mb-3 col-md-6 col-sm-12">
-                        <input type="text" class="form-control" id="returnL" name="returnL" list="locationList" placeholder="Return Location" required>
-                        <label for="returnL" class="paddingLabel">Return Location <span class="text-danger">*</span></label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-floating mb-3 col-md-6 col-sm-12">
-                        <input type="text" class="form-control" id="flightNumber" name="flightNumber" placeholder="Flight Number" required>
-                        <label for="flightNumber" class="paddingLabel">Flight Number <span class="text-danger">*</span></label>
-                    </div>
-                    <div class="form-floating mb-3 col-md-6 col-sm-12">
-                        <input type="number" class="form-control " id="numberOfPassengers" name="numberOfPassengers" placeholder="Number of Passengers" required>
-                        <label for="numberOfPassengers" class="paddingLabel">Number of Passengers <span class="text-danger">*</span></label>
-                    </div>
-                    <div class="form-floating mb-3 col-md-6 col-sm-12">
-                        <input type="number" class="form-control" id="bigLuggage" name="bigLuggage" placeholder="Big Luggage" required>
-                        <label for="bigLuggage" class="paddingLabel">Big Luggage <span class="text-danger">*</span></label>
-                    </div>
-                    <div class="form-floating mb-3 col-md-6 col-sm-12">
-                        <input type="number" class="form-control" id="smallLuggage" name="smallLuggage" placeholder="Small Luggage" required>
-                        <label for="smallLuggage" class="paddingLabel">Small Luggage <span class="text-danger">*</span></label>
-                    </div>
-                </div>
-               
-       
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" id="additionalInfo" name="additionalInfo" placeholder="Additional Info" style="height: 100px"></textarea>
-                    <label for="additionalInfo">Additional Info</label>
-                </div>
-                <input type="hidden" id="carBrand" name="carBrand" value="">
-                <input type="hidden" id="baby" name="babyseat" value="">
-
-
-                <button class="w-100 btn btn-lg btn-primary" type="button" onclick="logFormValues()">Submit</button>
-            </form> -->
-
             <form id="infoForm" class="p-4 p-md-5 border rounded-3 border-primary shadow bg-white">
                 <h2 class="text-center">Booking Form</h2>
             
